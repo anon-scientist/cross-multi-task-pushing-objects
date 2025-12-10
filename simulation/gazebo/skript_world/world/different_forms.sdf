@@ -1,0 +1,972 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+    <world name="Forschungsprojekt_world">
+        <physics name="default_physics" type="dart">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>1000</real_time_update_rate>
+        </physics>
+        
+        <plugin
+            filename="gz-sim-physics-system"
+            name="gz::sim::systems::Physics">
+        </plugin>
+        <plugin
+            filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster">
+        </plugin>
+        <plugin
+          filename="gz-sim-sensors-system"
+          name="gz::sim::systems::Sensors">
+          <render_engine>ogre2</render_engine>
+        </plugin>
+        <plugin
+            filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands">
+        </plugin>
+
+    <!-- contact sensor system -->
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"/>
+
+        
+        <gui>
+			<camera name="observation_camera">
+                <view_controller>orbit</view_controller>
+                <projection_type>perspective</projection_type>
+				<track_visual>
+					<name>3pi_front_cam_robot</name>
+					<static>1</static>
+					<xyz>-0.01 0 2</xyz>
+                    <inherit_yaw>0</inherit_yaw>
+				</track_visual>
+			</camera>
+		</gui>
+        
+		<light type="directional" name="sun">
+            <cast_shadows>0</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>1  0 -0.7</direction>
+        </light>
+
+        <include>
+            <uri>model://..//default_model//empty_plane</uri>
+            <pose> 0 0 -0.1 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>
+                model://Sphere_H_white
+            </uri>
+            <pose>0.0 -149.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_H_pink
+            </uri>
+            <pose>0.0 -147.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_Hash_pink
+            </uri>
+            <pose>0.0 -145.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_plain_green
+            </uri>
+            <pose>0.0 -143.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_O_green
+            </uri>
+            <pose>0.0 -141.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_O_red
+            </uri>
+            <pose>0.0 -139.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_O_white
+            </uri>
+            <pose>0.0 -137.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_H_blue
+            </uri>
+            <pose>0.0 -135.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_O_blue
+            </uri>
+            <pose>0.0 -133.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_H_red
+            </uri>
+            <pose>0.0 -131.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_A_blue
+            </uri>
+            <pose>0.0 -129.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_H_green
+            </uri>
+            <pose>0.0 -127.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_plain_pink
+            </uri>
+            <pose>0.0 -125.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_A_red
+            </uri>
+            <pose>0.0 -123.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_A_green
+            </uri>
+            <pose>0.0 -121.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_X_white
+            </uri>
+            <pose>0.0 -119.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_X_red
+            </uri>
+            <pose>0.0 -117.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_Hash_green
+            </uri>
+            <pose>0.0 -115.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_X_green
+            </uri>
+            <pose>0.0 -113.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_A_pink
+            </uri>
+            <pose>0.0 -111.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_X_pink
+            </uri>
+            <pose>0.0 -109.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_plain_white
+            </uri>
+            <pose>0.0 -107.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_Hash_red
+            </uri>
+            <pose>0.0 -105.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_A_white
+            </uri>
+            <pose>0.0 -103.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_X_blue
+            </uri>
+            <pose>0.0 -101.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_plain_red
+            </uri>
+            <pose>0.0 -99.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_Hash_white
+            </uri>
+            <pose>0.0 -97.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_Hash_blue
+            </uri>
+            <pose>0.0 -95.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_plain_blue
+            </uri>
+            <pose>0.0 -93.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Sphere_O_pink
+            </uri>
+            <pose>0.0 -91.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_H_white
+            </uri>
+            <pose>0.0 -89.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_H_pink
+            </uri>
+            <pose>0.0 -87.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_Hash_pink
+            </uri>
+            <pose>0.0 -85.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_plain_green
+            </uri>
+            <pose>0.0 -83.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_O_green
+            </uri>
+            <pose>0.0 -81.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_O_red
+            </uri>
+            <pose>0.0 -79.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_O_white
+            </uri>
+            <pose>0.0 -77.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_H_blue
+            </uri>
+            <pose>0.0 -75.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_O_blue
+            </uri>
+            <pose>0.0 -73.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_H_red
+            </uri>
+            <pose>0.0 -71.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_A_blue
+            </uri>
+            <pose>0.0 -69.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_H_green
+            </uri>
+            <pose>0.0 -67.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_plain_pink
+            </uri>
+            <pose>0.0 -65.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_A_red
+            </uri>
+            <pose>0.0 -63.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_A_green
+            </uri>
+            <pose>0.0 -61.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_X_white
+            </uri>
+            <pose>0.0 -59.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_X_red
+            </uri>
+            <pose>0.0 -57.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_Hash_green
+            </uri>
+            <pose>0.0 -55.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_X_green
+            </uri>
+            <pose>0.0 -53.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_A_pink
+            </uri>
+            <pose>0.0 -51.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_X_pink
+            </uri>
+            <pose>0.0 -49.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_plain_white
+            </uri>
+            <pose>0.0 -47.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_Hash_red
+            </uri>
+            <pose>0.0 -45.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_A_white
+            </uri>
+            <pose>0.0 -43.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_X_blue
+            </uri>
+            <pose>0.0 -41.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_plain_red
+            </uri>
+            <pose>0.0 -39.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_Hash_white
+            </uri>
+            <pose>0.0 -37.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_Hash_blue
+            </uri>
+            <pose>0.0 -35.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_plain_blue
+            </uri>
+            <pose>0.0 -33.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://D8_O_pink
+            </uri>
+            <pose>0.0 -31.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_H_white
+            </uri>
+            <pose>0.0 -29.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_H_pink
+            </uri>
+            <pose>0.0 -27.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_Hash_pink
+            </uri>
+            <pose>0.0 -25.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_plain_green
+            </uri>
+            <pose>0.0 -23.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_O_green
+            </uri>
+            <pose>0.0 -21.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_O_red
+            </uri>
+            <pose>0.0 -19.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_O_white
+            </uri>
+            <pose>0.0 -17.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_H_blue
+            </uri>
+            <pose>0.0 -15.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_O_blue
+            </uri>
+            <pose>0.0 -13.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_H_red
+            </uri>
+            <pose>0.0 -11.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_A_blue
+            </uri>
+            <pose>0.0 -9.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_H_green
+            </uri>
+            <pose>0.0 -7.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_plain_pink
+            </uri>
+            <pose>0.0 -5.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_A_red
+            </uri>
+            <pose>0.0 -3.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_A_green
+            </uri>
+            <pose>0.0 -1.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_X_white
+            </uri>
+            <pose>0.0 1.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_X_red
+            </uri>
+            <pose>0.0 3.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_Hash_green
+            </uri>
+            <pose>0.0 5.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_X_green
+            </uri>
+            <pose>0.0 7.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_A_pink
+            </uri>
+            <pose>0.0 9.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_X_pink
+            </uri>
+            <pose>0.0 11.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_plain_white
+            </uri>
+            <pose>0.0 13.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_Hash_red
+            </uri>
+            <pose>0.0 15.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_A_white
+            </uri>
+            <pose>0.0 17.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_X_blue
+            </uri>
+            <pose>0.0 19.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_plain_red
+            </uri>
+            <pose>0.0 21.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_Hash_white
+            </uri>
+            <pose>0.0 23.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_Hash_blue
+            </uri>
+            <pose>0.0 25.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_plain_blue
+            </uri>
+            <pose>0.0 27.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cube_O_pink
+            </uri>
+            <pose>0.0 29.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_H_white
+            </uri>
+            <pose>0.0 31.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_H_pink
+            </uri>
+            <pose>0.0 33.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_Hash_pink
+            </uri>
+            <pose>0.0 35.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_plain_green
+            </uri>
+            <pose>0.0 37.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_O_green
+            </uri>
+            <pose>0.0 39.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_O_red
+            </uri>
+            <pose>0.0 41.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_O_white
+            </uri>
+            <pose>0.0 43.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_H_blue
+            </uri>
+            <pose>0.0 45.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_O_blue
+            </uri>
+            <pose>0.0 47.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_H_red
+            </uri>
+            <pose>0.0 49.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_A_blue
+            </uri>
+            <pose>0.0 51.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_H_green
+            </uri>
+            <pose>0.0 53.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_plain_pink
+            </uri>
+            <pose>0.0 55.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_A_red
+            </uri>
+            <pose>0.0 57.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_A_green
+            </uri>
+            <pose>0.0 59.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_X_white
+            </uri>
+            <pose>0.0 61.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_X_red
+            </uri>
+            <pose>0.0 63.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_Hash_green
+            </uri>
+            <pose>0.0 65.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_X_green
+            </uri>
+            <pose>0.0 67.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_A_pink
+            </uri>
+            <pose>0.0 69.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_X_pink
+            </uri>
+            <pose>0.0 71.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_plain_white
+            </uri>
+            <pose>0.0 73.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_Hash_red
+            </uri>
+            <pose>0.0 75.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_A_white
+            </uri>
+            <pose>0.0 77.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_X_blue
+            </uri>
+            <pose>0.0 79.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_plain_red
+            </uri>
+            <pose>0.0 81.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_Hash_white
+            </uri>
+            <pose>0.0 83.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_Hash_blue
+            </uri>
+            <pose>0.0 85.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_plain_blue
+            </uri>
+            <pose>0.0 87.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Cylinder_O_pink
+            </uri>
+            <pose>0.0 89.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_H_white
+            </uri>
+            <pose>0.0 91.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_H_pink
+            </uri>
+            <pose>0.0 93.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_Hash_pink
+            </uri>
+            <pose>0.0 95.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_plain_green
+            </uri>
+            <pose>0.0 97.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_O_green
+            </uri>
+            <pose>0.0 99.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_O_red
+            </uri>
+            <pose>0.0 101.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_O_white
+            </uri>
+            <pose>0.0 103.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_H_blue
+            </uri>
+            <pose>0.0 105.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_O_blue
+            </uri>
+            <pose>0.0 107.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_H_red
+            </uri>
+            <pose>0.0 109.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_A_blue
+            </uri>
+            <pose>0.0 111.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_H_green
+            </uri>
+            <pose>0.0 113.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_plain_pink
+            </uri>
+            <pose>0.0 115.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_A_red
+            </uri>
+            <pose>0.0 117.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_A_green
+            </uri>
+            <pose>0.0 119.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_X_white
+            </uri>
+            <pose>0.0 121.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_X_red
+            </uri>
+            <pose>0.0 123.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_Hash_green
+            </uri>
+            <pose>0.0 125.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_X_green
+            </uri>
+            <pose>0.0 127.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_A_pink
+            </uri>
+            <pose>0.0 129.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_X_pink
+            </uri>
+            <pose>0.0 131.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_plain_white
+            </uri>
+            <pose>0.0 133.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_Hash_red
+            </uri>
+            <pose>0.0 135.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_A_white
+            </uri>
+            <pose>0.0 137.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_X_blue
+            </uri>
+            <pose>0.0 139.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_plain_red
+            </uri>
+            <pose>0.0 141.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_Hash_white
+            </uri>
+            <pose>0.0 143.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_Hash_blue
+            </uri>
+            <pose>0.0 145.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_plain_blue
+            </uri>
+            <pose>0.0 147.0 0 0 0 0</pose>
+        </include>
+        <include>
+            <uri>
+                model://Pyramide_O_pink
+            </uri>
+            <pose>0.0 149.0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+            <uri>model://3pi_robot_with_front_cam</uri>
+            <pose>-0.5 0 0 0 0 0</pose>
+        </include>
+        
+    </world>
+</sdf>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+  <model name="D8_X_blue">
+    <static>true</static>
+    <link name="link">
+      <collision name="collider">
+        <geometry>
+          <box> <size>0.1 0.1 0.1</size> </box>
+        </geometry>
+      </collision>
+ 
+      <pose>0 0 0.01 1.57 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://D8_X_blue/D8.obj</uri>
+            <scale>0.05 0.05 0.05</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
+

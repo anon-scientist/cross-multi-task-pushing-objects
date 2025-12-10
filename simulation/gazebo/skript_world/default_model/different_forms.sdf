@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+    <world name="Forschungsprojekt_world">
+        <physics name="default_physics" type="dart">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <real_time_update_rate>1000</real_time_update_rate>
+        </physics>
+        
+        <plugin
+            filename="gz-sim-physics-system"
+            name="gz::sim::systems::Physics">
+        </plugin>
+        <plugin
+            filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster">
+        </plugin>
+        <plugin
+          filename="gz-sim-sensors-system"
+          name="gz::sim::systems::Sensors">
+          <render_engine>ogre2</render_engine>
+        </plugin>
+        <plugin
+            filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands">
+        </plugin>
+
+    <!-- contact sensor system -->
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"/>
+
+        
+        <gui>
+			<camera name="observation_camera">
+                <view_controller>orbit</view_controller>
+                <projection_type>perspective</projection_type>
+				<track_visual>
+					<name>3pi_front_cam_robot</name>
+					<static>1</static>
+					<xyz>-0.01 0 2</xyz>
+                    <inherit_yaw>0</inherit_yaw>
+				</track_visual>
+			</camera>
+		</gui>
+        
+		<light type="directional" name="sun">
+            <cast_shadows>0</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>1  0 -0.7</direction>
+        </light>
+
+        <include>
+            <uri>model://..//default_model//empty_plane</uri>
+            <pose> 0 0 -0.1 0 0 0</pose>
+        </include>
+        
+        ##Insert_Here##
+        
+        <include>
+            <uri>model://3pi_robot_with_front_cam</uri>
+            <pose>-0.5 0 0 0 0 0</pose>
+        </include>
+        
+    </world>
+</sdf>
+

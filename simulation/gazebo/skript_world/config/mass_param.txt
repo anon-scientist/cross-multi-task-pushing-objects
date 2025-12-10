@@ -1,0 +1,22 @@
+# Zeilen mit # werden ignoriert
+#
+# Aufbau:
+#   Form|Symbol|Farbe|Mass-Wert
+#  
+#   Wenn ein Teil leer bzw. nicht definiert wird, werden alle möglichen Kombinationen verwendet
+#   Beispiel:
+#   |A|red|20
+#   -> Alle Formen die als Symbol ein A und die Farbe rot haben, bekommen den Wert 20
+#
+# weitere Beispiele:
+#
+# Cube|A|red|20
+# -> Alle Cubes die als Symbol ein A haben und die Farbe rot haben, bekommen den Wert 20
+#
+# |A|red|20
+# -> Alle Formen die als Symbol ein A und die Farbe rot haben, bekommen den Wert 20
+#
+# ||green|20
+# -> alle Objekte die Grün sind bekommen den Wert 20. Egal welches Symbol und Form sie haben
+
+|A|red|20
