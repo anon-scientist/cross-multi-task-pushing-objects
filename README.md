@@ -1,4 +1,4 @@
-# MPO benchmark, part of the CRoSS benchmark suite
+# Multi-Task Pushing-Objects (MPO) benchmark, part of the CRoSS benchmark suite
 This repository contains the Multi-Task Pushing-Objects (MPO) benchmark from the CRoSS suite.
 
 *This repository is provided exclusively for anonymous review purposes.
